@@ -15,7 +15,7 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 350px;
   margin: auto;
-  flex: 1;
+  flex: 0;
 }
 
 h2 { 
