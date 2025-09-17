@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Random Password Generator</title>
+  <title>Password Generator & Strength Checker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>Random Password Generator</h2>
+    <h2>Password Generator</h2>
 
     <div class="options">
       <label>Password Length: <span id="lengthValue">12</span></label>
@@ -22,11 +22,12 @@
     <button id="generate">Generate Password</button>
     <input type="text" id="password" readonly placeholder="Your password will appear here">
     <button id="copy">Copy Password</button>
+
+    <h2>Password Strength Checker</h2>
+    <input type="text" id="checkPassword" placeholder="Paste or type a password">
+    <div id="strengthBar"><div id="strengthFill"></div></div>
+    <p id="strengthText"></p>
   </div>
-
-
-
-  <script src="script.js"></script>
 
   <footer>
     <p>© 2025 Zohaib Akram | Connect with me on 
@@ -34,5 +35,7 @@
       <a href="https://github.com/zohaib160" target="_blank">GitHub</a>
     </p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
