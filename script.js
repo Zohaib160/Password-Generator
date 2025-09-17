@@ -1,4 +1,4 @@
-// Elements
+
 const lengthSlider = document.getElementById('length');
 const lengthValue = document.getElementById('lengthValue');
 const generateBtn = document.getElementById('generate');
@@ -8,13 +8,27 @@ const copyBtn = document.getElementById('copy');
 const checkInput = document.getElementById('checkPassword');
 const strengthFill = document.getElementById('strengthFill');
 const strengthText = document.getElementById('strengthText');
+const messageDiv = document.createElement('div'); 
+messageDiv.className = 'message';
+document.querySelector('.container').appendChild(messageDiv);
 
-// Update slider display
+
+function showMessage(text, color = '#f44336') {
+  messageDiv.textContent = text;
+  messageDiv.style.background = color;
+  messageDiv.style.display = 'block';
+
+  setTimeout(() => {
+    messageDiv.style.display = 'none';
+  }, 4000);
+}
+
+
 lengthSlider.addEventListener('input', () => {
   lengthValue.textContent = lengthSlider.value;
 });
 
-// Generate password
+
 generateBtn.addEventListener('click', () => {
   const length = +lengthSlider.value;
   const useUpper = document.getElementById('uppercase').checked;
@@ -34,7 +48,7 @@ generateBtn.addEventListener('click', () => {
   if (useSpecial) allChars += specialChars;
 
   if (!allChars) {
-    alert('Please select at least one character type!');
+    showMessage('Please select at least one character type!');
     return;
   }
 
@@ -44,23 +58,23 @@ generateBtn.addEventListener('click', () => {
   }
 
   passwordOutput.value = password;
-  checkPasswordStrength(password); // show strength automatically
-  checkInput.value = password; // paste in strength checker input
+  checkPasswordStrength(password); 
+  checkInput.value = password; 
 });
 
-// Copy password
+
 copyBtn.addEventListener('click', () => {
   if (passwordOutput.value === '') {
-    alert('No password to copy!');
+    showMessage('No password to copy!');
     return;
   }
   passwordOutput.select();
   passwordOutput.setSelectionRange(0, 99999);
   document.execCommand('copy');
-  alert('Password copied to clipboard!');
+  showMessage('Password copied to clipboard!', '#2ecc71'); 
 });
 
-// Evaluate password strength
+
 checkInput.addEventListener('input', () => {
   checkPasswordStrength(checkInput.value);
 });
@@ -90,4 +104,3 @@ function checkPasswordStrength(password) {
   strengthFill.style.background = color;
   strengthText.textContent = text;
 }
-

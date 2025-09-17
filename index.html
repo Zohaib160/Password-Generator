@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Password Generator & Strength Checker</title>
+  <title>PassGuard</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="lock.png">
+
 </head>
 <body>
   <div class="container">
@@ -22,6 +24,8 @@
     <button id="generate">Generate Password</button>
     <input type="text" id="password" readonly placeholder="Your password will appear here">
     <button id="copy">Copy Password</button>
+    <div id="message" class="message"></div>
+
 
     <h2>Password Strength Checker</h2>
     <input type="text" id="checkPassword" placeholder="Paste or type a password">
