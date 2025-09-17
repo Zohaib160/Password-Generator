@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Random Password Generator</h2>
+
+    <div class="options">
+      <label>Password Length: <span id="lengthValue">12</span></label>
+      <input type="range" id="length" min="6" max="20" value="12">
+      
+      <label><input type="checkbox" id="uppercase" checked> Include Uppercase</label>
+      <label><input type="checkbox" id="lowercase" checked> Include Lowercase</label>
+      <label><input type="checkbox" id="numbers" checked> Include Numbers</label>
+      <label><input type="checkbox" id="special" checked> Include Special Characters</label>
+    </div>
+
+    <button id="generate">Generate Password</button>
+    <input type="text" id="password" readonly placeholder="Your password will appear here">
+    <button id="copy">Copy Password</button>
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+  <footer>
+    <p>© 2025 Zohaib Akram | Connect with me on 
+      <a href="https://www.linkedin.com/in/zohaib-akram-70495a319/" target="_blank">LinkedIn</a> & 
+      <a href="https://github.com/zohaib160" target="_blank">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
